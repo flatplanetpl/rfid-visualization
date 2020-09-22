@@ -4,11 +4,11 @@ var connection = new signalR.HubConnectionBuilder().withUrl("/hubs/NotifySticker
 
 connection.on("ClinetNotifySticker", function (message) {
 
-    document.getElementById("log").append(message);
+    document.getElementById("log").append(message + "\r");
 });
 
 connection.start().then(function () {
-  
+
 }).catch(function (err) {
     return console.error(err.toString());
 });
